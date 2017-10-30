@@ -15,16 +15,16 @@ The default localtunnel client connects to the `localtunnel.me` server. You can,
 
 The above are important as the client will ask the server for a subdomain under a particular domain. The server will listen on any OS-assigned TCP port for client connections.
 
-#### setup
+#### setup（base on [localtunnel_server_client](https://travis-ci.org/localtunnel/server)）
 
 ```shell
 # pick a place where the files will live
-git clone git://github.com/defunctzombie/localtunnel-server.git
-cd localtunnel-server
+git clone git://github.com/gengfire/localtunnel_server_client.git
+cd localtunnel_server_client/server
 npm install
 
-# server set to run on port 1234
-bin/server --port 1234
+# server set to run on port 1234 and TCP socket port 2001
+bin/server --port 1234 --socket-port 2001
 ```
 
 The localtunnel server is now running and waiting for client requests on port 1234. You will most likely want to set up a reverse proxy to listen on port 80 (or start localtunnel on port 80 directly).
